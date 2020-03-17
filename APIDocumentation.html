@@ -161,7 +161,57 @@
                     <h2 class="p-3 text-white bg-dark"> Path: </h2>
                     <h2 class="p-3 text-white bg-dark"> Player + Enemy: </h2>
                     <h2 class="p-3 text-white bg-dark"> SceneFileParser: </h2>
+                    <h4>parseWalls(type, walls, mGrid)
+                    </h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Type</th>
+                                <td>String</td>
+                                <td> is the file extension (Must be json to work)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Walls</th>
+                                <td>gameObjectSet</td>
+                                <td>  where the walls will be added to for access
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">mGrid</th>
+                                <td>Grid</td>
+                                <td> where the walls are added as obstacles for pathfinding
+                                </td>
+                            </tr>
+                    </table>
+                    <p>All Walls in json will be parsed</p>
+                    <p>For a wall to be parsed it must be in form </p>
                     </p>
+                    <p class="p-2 bg-secondary"><code class="text-white">
+                        “Walls”: [  <br>
+                        {<br>
+                                  "Color": [0, 1, 0.75, 1],<br>
+                                  "Pos": [100, 70.3571428571],<br>
+                                  "Width": 5,<br>
+                                  "Height": 80<br>
+                              }, <br>
+                              
+                              {<br>
+                                  "Color": [0, 1, 0.75, 1],<br>
+                                  "Pos": [50, 80.3571428571],<br>
+                                  "Width": 5,<br>
+                                  "Height": 100<br>
+                              }<br>
+                      ]<br>
+                      
+                    </code></p>
 
                 </div>
             </div>
