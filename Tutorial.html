@@ -50,7 +50,9 @@
                         <h2 class="p-3 text-white bg-dark"> Setting up an environment </h2> 
                         <p> To get started you will need to create and initialize a grid object.</p>
                         <p> To create the grid you will need to use the Grid.js file. </p>
-                        <p> this.mGrid = new Grid(100, 100);</p>
+                        <p class="p-2 bg-secondary"><code class="text-white">
+                        this.mGrid = new Grid(100, 100);
+                         </code></p>
                         <p> The two integers represent how many cells in the x and y direction there are.</p>
                         <p> You will also want to set the position and size of the grid, both are in world coordinates, to make sure that it is aligned properly. </p>
                         <p class="p-2 bg-secondary"><code class="text-white">
@@ -65,11 +67,73 @@
                             this.mGrid.setSize(width, height);</br>
                         </code></p>
                         <p> After the grid is initialized you will want to add obstacles into the grid. There are two options to add obstacles.</p>
+
                         <h4 class="p-1 text-white bg-info"> Option 1: Import existing walls </h4>
+                        <p> Walls can be added to your scene from a json file. To add the walls you will need to use the SceneFileParser.js. Your json file has to set up the walls in form:</p>
+                        <p class="p-2 bg-secondary"><code class="text-white">
+                            "Walls": [ <br>
+                            {
+                                "Color": [0, 1, 0.75, 1], <br>
+                                "Pos": [100, 70.3571428571], <br>
+                                "Width": 5, <br>
+                                "Height": 80 <br>
+                            },             ...as many walls as you need <br>
+                    
+                            ] <br>
+                    
+                        </code></p>
+
+                        <p> In your scene, you then only need to call </p>
+
+                        <p class="p-2 bg-secondary"><code class="text-white">
+                            this.sceneParser.parseWalls("JSON", this.walls, this.mGrid);
+                        </code></p>
+
+                        <p> Where sceneParser is a SceneFileParser object, this.walls is an empty gameObjectSet, and this.mGrid is your initialized grid. </p>
+
                         <h4 class="p-1 text-white bg-info"> Option 2: Add walls manually </h4>
+                        <p>If you do not want to use the SceneFileParser, you may create walls manually</p>
+                        <p>Walls can be created as any object that has a .getXform() function. They then will be added to the grid using a .addStatic(object) function</p>
+                        <p class="p-2 bg-secondary"><code class="text-white">
+                            //create the object <br>
+                            var wall3 = new Renderable(); <br>
+                            wall3.setColor([0, 1, .75, 1]); <br>
+                            wall3.getXform().setPosition(250, 35); <br>
+                            wall3.getXform().setSize(10, 100); <br>
+
+                            //add the object to the grid <br>
+                            this.mGrid.addStatic(wall1); <br>
+
+                        </code></p>
                         <h2 class="p-3 text-white bg-dark"> Moving players</h2> 
-                        <h2 class="p-3 text-white bg-dark"> Player + Enemy: </h2> 
-                        <h2 class="p-3 text-white bg-dark"> SceneFileParser: </h2> 
+                        <p>Once you have the grid initialized and have obstacles, you will want to use the Path.js file to find paths and move a player or npc.</p>
+                        <p>Initialize the Path Object</p>
+                        <p class="p-2 bg-secondary"><code class="text-white">
+                            this.sceneParser.parseWalls("JSON", this.walls, this.mGrid);
+                        </code></p>
+                        <p>Where mGrid is the initialized grid and xform is the transform of the object that you want to be moved. After the Path object is created you will need to pass in a starting location and end location that you want the object to move towards. 
+                        </p>
+                        <p class="p-2 bg-secondary"><code class="text-white">
+                            this.mPath.findPath(startPos, endPos);
+                        </code></p>
+                        <p>Both positions are an array that contains an x and y in world coordinates.
+                            You will now simply need to call update on the path object to start moving your object.
+                        </p>
+                        <p class="p-2 bg-secondary"><code class="text-white">
+                            //in update function <br>
+                            this.mPath.update();
+                        </code></p>
+                        <p>If you don’t call update on the path, it will never handle the movement for your player or npc.</p>
+                        <p>If you want the object to follow a series of points you will need to define an array of world coordinate positions and call findMultiPath instead of findPath. It is still updated the same way</p>
+                        <p class="p-2 bg-secondary"><code class="text-white">
+                            Var waypoints = [[x, y], [x, y], [x, y]] <br>
+                            this.mPath.findMultiPath(startPos, waypoints); <br>
+                            
+                            //in update function <br>
+                            this.mPath.update(); <br>
+                            
+                        </code></p>
+
                     </p>
                     
                 </div>
