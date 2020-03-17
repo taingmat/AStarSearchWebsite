@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- For English -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Matthew Taing">
+    <!-- For responsivness/resizing-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap for accessibility and responsiveness-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Google fonts for nice fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- CSS style -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Team Hello World PathFinding API</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="bg-dark"> 
+        <div class="container">
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="index.html">
+                    <!-- Title here -->
+                        Team Hello World PathFinding API
+                </a>
+            </nav>
+        </div>
+
+    </header>
+    <!-- Main Cover -->
+    <!-- The main cover can vary in rows and columns -->
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row my-row">
+                <div class="col col-12 my-col">
+                    <!-- Titles -->
+                    <h1 class="display-5">PathFinding API</h1>
+                </div>
+                <div class="col 8" id="main-description">
+                    <p id="main-paragraph">
+                        <!-- Main description paragraph -->
+                        <h2> Module Description: </h2> 
+                    </p>
+                    
+                    <p>
+                        This API consists of four files. One file is an external library that handles the path finding. The person that created the astar.js that is used in this API is Brian Grinstead. You can check out his github here. The other three files are created by Isaiah Snow and Matthew Taing.     
+                    </p>
+
+                    <p>
+                        Grid.js is a grid object that will sit on top of the game in world space and is independent from the camera. Obstacles can be added and removed from the grid.
+                    </p>
+
+                    <p>
+                        Path.js is a pathfinding object that is attached to a single object that contains a transform. It will handle the pathfinding and movement of the object it is attached to.
+                    </p>
+
+                    <p>
+                        SceneFileParser.js is used to parse Walls from a json file. It will add every wall inside of the json file to a gameObjectSet and set them as a obstacle in the grid.
+                    </p>
+                </div>
+                <div class="col 6" id="main-description">
+                    <h2>Documentation Navigation</h2>
+                    <a class="btn btn-info" id="mainButton" href="APIDocumentation.html" role="button">API Documentation</a>
+                    <br>
+                    <br>
+                    <a class="btn btn-info" id="mainButton" href="Tutorial.html" role="button">Tutorials</a>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <!-- Body content here -->
+
+    <!-- Footer -->
+    <div class="container-fluid bg-info my-footer">
+        <footer role="contentinfo" aria-label="Footer">
+            <div class="footer-copyright text-center py-3"></div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+
+    <!-- Bootstrap & JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
