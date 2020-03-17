@@ -156,9 +156,190 @@
                     </table>
                     <p> Sets the height of the grid</p>
 
-                    <h4> getCellCount</h4>
+                    <h4> getCellCount()</h4>
                     <p> Returns the number of cells on the x axis and the y axis in array form of [numXCells, numYCells]</p>
+
+                    <h4> addStatic(object)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Object</th>
+                                <td>gameObject</td>
+                                <td>Object that is being added to the grid</td>
+                            </tr>
+                    </table>
+                    <p>Adds a non moving object to the grid</p>
+                    <h4> removeStatic(object)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Object</th>
+                                <td>gameObject</td>
+                                <td>Object that is being removed from the grid</td>
+                            </tr>
+                    </table>
+                    <p>Removes the obstacle from the grid</p>
+
+                    <h4> search(start, end)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">start</th>
+                                <td>vec2[int, int]</td>
+                                <td>Starting location of the search</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">end</th>
+                                <td>vec2[int, int]</td>
+                                <td>Ending location of the search</td>
+                            </tr>
+                    </table>
+                    <p>Searches for a path from start to end. Returns path of grid cells or empty array if no path foud</p>
+
+                    <h4> Draw()</h4>
+                    <p>Draws the grid lines if enabled</p>
+
+
+
                     <h2 class="p-3 text-white bg-dark"> Path: </h2>
+
+                    <h4> Path(grid, xform)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">grid</th>
+                                <td>Grid</td>
+                                <td>Grid that the path will search through</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">xform</th>
+                                <td>Transform</td>
+                                <td>Transfor of the object to me moved</td>
+                            </tr>
+                    </table>
+                    <p>Creates the path finding object for an object</p>
+
+                    <h4> setSpeed(speed)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">speed</th>
+                                <td>int</td>
+                                <td>Speed to set the object to</td>
+                            </tr>
+                    </table>
+                    <p>Sets the speed of the object to be moved</p>
+
+                    <h4> findPath(start, end)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">start</th>
+                                <td>vec2[int, int]</td>
+                                <td>Starting location of the search</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">end</th>
+                                <td>vec2[int, int]</td>
+                                <td>Ending location of the search</td>
+                            </tr>
+                    </table>
+                    <p>Searches and stores a path from start to end. Draws path lines</p>
+
+                    <h4> findMultiPath(start, waypoints)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">start</th>
+                                <td>vec2[int, int]</td>
+                                <td>Starting location of the search</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">waypoints</th>
+                                <td>array of vec2[int, int]</td>
+                                <td>Positions to search through</td>
+                            </tr>
+                    </table>
+                    <p>Searches and stores a path from start through every vec2 in waypoints.</p>
+
+                    <h4> findPathLines(start, end)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">start</th>
+                                <td>vec2[int, int]</td>
+                                <td>Starting location of the search</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">end</th>
+                                <td>vec2[int, int]</td>
+                                <td>Ending location of the search</td>
+                            </tr>
+                    </table>
+                    <p>Searches for a path from start to end and only draws path lines.</p>
+
+                    <h4> update()</h4>
+                    <p>Updates the transform of the object to be moved. If not called the transform won't update</p>
+                    
+                    <h4> draw()</h4>
+                    <p>Draws the lines to represent the current path of the object</p>
+
                     <h2 class="p-3 text-white bg-dark"> Player + Enemy: </h2>
                     <h2 class="p-3 text-white bg-dark"> SceneFileParser: </h2>
                     <h4>parseWalls(type, walls, mGrid)
