@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
@@ -47,46 +47,122 @@
                 <div class="col 8" id="main-description">
                     <p id="main-paragraph">
                         <!-- Main description paragraph -->
-                        <h2 class="p-3 text-white bg-dark"> Grid: </h2> 
-                        <p> Object that creates a grid overlay over the world space.</p>
-                        <h3> Methods: </h3>
-                        <h4> Grid(xCells, yCells): </h4>
-                        <h5><strong> Parameters </strong></h5>
-                        <table class="table table-bordered">
-                            <thead>
-                              <tr>
+                        <h2 class="p-3 text-white bg-dark"> Grid: </h2>
+                    <p> Object that creates a grid overlay over the world space.</p>
+                    <h3> Methods: </h3>
+                    <h4> Grid(xCells, yCells): </h4>
+                    <h5><strong> Parameters </strong></h5>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Description</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
                                 <th scope="row">xCells</th>
-                                <td>yCells</td>
-                                <td>@mdo</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        <p>Creates a new grid with the total number of GridSpaces being xCells * yCells </p>
-                        <h4> setPosition(x, y)</h4>
-                        <p> Sets the center of the grid to be at position x, y</p>
-                        <h4> setSize(x, y)</h4>
-                        <h4> setWidth(x)</h4>
-                        <h2 class="p-3 text-white bg-dark"> Path: </h2> 
-                        <h2 class="p-3 text-white bg-dark"> Player + Enemy: </h2> 
-                        <h2 class="p-3 text-white bg-dark"> SceneFileParser: </h2> 
+                                <td>int</td>
+                                <td>width of the grid in cell units</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">yCells</th>
+                                <td>int</td>
+                                <td>height of the grid in cell units</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Creates a new grid with the total number of GridSpaces being xCells * yCells </p>
+                    <h4> setPosition(x, y)</h4>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">x</th>
+                                <td>float</td>
+                                <td>world coordinate unit on the x axis</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">y</th>
+                                <td>float</td>
+                                <td>world coordinate unit on the y axis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p> Sets the center of the grid to be at position x, y</p>
+                    <h4> setSize(x, y)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">x</th>
+                                <td>float</td>
+                                <td>world coordinate unit on the x axis that represents width</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">y</th>
+                                <td>float</td>
+                                <td> float : world coordinate unit on the y axis that represents height</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p> Sets the size of the grid</p>
+                    <h4> setWidth(x)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">x</th>
+                                <td>float</td>
+                                <td>world coordinate unit on the x axis that represents width</td>
+                            </tr>
+                    </table>
+                    <p> Sets the width of the grid</p>
+                    <h4> setHeight(y)</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">y</th>
+                                <td>float</td>
+                                <td>world coordinate unit on the y axis that represents height</td>
+                            </tr>
+                    </table>
+                    <p> Sets the height of the grid</p>
+
+                    <h4> getCellCount</h4>
+                    <p> Returns the number of cells on the x axis and the y axis in array form of [numXCells, numYCells]</p>
+                    <h2 class="p-3 text-white bg-dark"> Path: </h2>
+                    <h2 class="p-3 text-white bg-dark"> Player + Enemy: </h2>
+                    <h2 class="p-3 text-white bg-dark"> SceneFileParser: </h2>
                     </p>
-                    
+
                 </div>
             </div>
         </div>
